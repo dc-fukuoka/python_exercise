@@ -31,8 +31,8 @@ dtype: float64
 matrix size: 128 x 128
 dgemm time: 0.0002474784851074219 trace: 4110.47098433
 ~~~
-performance comparison between MKL blas dgemm() by fortran vs numpy dot(both uses 16 threads):
-matrix size: 8192x8192
+performance comparison between MKL blas dgemm() by fortran vs numpy dot(both uses 16 threads):  
+matrix size: 8192x8192  
   
-MKL dgemm(): 3.82s
-numpy dot  : 3.87s
+MKL dgemm(): 3.82s  
+numpy dot  : 3.87s  
