@@ -12,7 +12,7 @@ iter: 20 x: 0.250000000000037 diff: 2.964295475749168e-14
 converged, iter: 25
 minimum value at x = 0.25
 ~~~
- * gd_2d.py gradient descent with two dimensional function. numpy is needed.
+ * gd_2d.py: gradient descent with two dimensional function. numpy is needed.
  ~~~
  $ ./gd_2d.py 0.4
 alpha: 0.4 offset: [ 0.25  0.5 ]
