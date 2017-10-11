@@ -18,12 +18,8 @@ def dgemm(a, b, c):
                 c[i][j] += a[i][k]*b[k][j]
 """
  
-def trace(c, size):
-    tr = 0.0
-    for i in range(size):
-        tr = tr + c[i][i]
-    
-    return tr
+def trace(c):
+    return  np.trace(c)
 
 def main():
     size = 128
@@ -39,7 +35,7 @@ def main():
     dgemm(a, b, c)
     time = t.time() - t0
     print("matrix size:", size, "x", size)
-    print("dgemm time:", time, "trace:", trace(c, size))
+    print("dgemm time:", time, "trace:", trace(c))
     
 if __name__ == "__main__":
     main()
