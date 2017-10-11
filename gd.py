@@ -2,22 +2,21 @@
 
 # gradient descent
 
-import numpy as np
 import math
 import sys
 
 def gauss(x, offset):
     return -1.0*math.exp(-1.0*((x-offset)**2))
 
-def gauss_prime(x, offset):
+def grad_gauss(x, offset):
     return -2.0*(x-offset)*gauss(x, offset)
 
-def gradient_descent(func_prime, offset, x0, tol, iter_max, alpha):
+def gradient_descent(grad_func, offset, x0, tol, iter_max, alpha):
     x    = x0
     xnew = 0.0
     
     for iter in range(iter_max):
-        xnew = x - alpha*func_prime(x, offset)
+        xnew = x - alpha*grad_func(x, offset)
         diff = abs(xnew - x)
 
         if iter%10 == 0:
@@ -50,7 +49,7 @@ def main():
         alpha = float(argv[1])
 
     print("alpha:", alpha, "offset:", offset)
-    res = gradient_descent(gauss_prime, offset, x0, tol, iter_max, alpha)
+    res = gradient_descent(grad_gauss, offset, x0, tol, iter_max, alpha)
 
     print("minimum value:", res)
         
