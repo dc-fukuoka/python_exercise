@@ -51,7 +51,7 @@ def main():
     print("alpha:", alpha, "offset:", offset)
     res = gradient_descent(grad_gauss, offset, x0, tol, iter_max, alpha)
 
-    print("minimum value:", res)
+    print("minimum value at x =", res)
         
 if __name__ == "__main__":
     main()
