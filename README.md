@@ -35,4 +35,22 @@ performance comparison between MKL blas dgemm() by fortran vs numpy dot(both use
 matrix size: 8192x8192  
   
 MKL dgemm(): 3.82s  
-numpy dot  : 3.87s  
+numpy dot  : 3.87s
+
+ * read_struct.py: read packed data(struct in C) by python.
+~~~
+$ gcc -g write.c
+$ ./a.out
+$ objdump -sb binary test.dat
+
+test.dat:     file format binary
+
+Contents of section .data:
+ 0000 01000000 02000000 0f000000 00000000  ................
+ 0010 74657374 00000000                    test....
+$ ./read_struct.py
+res[ 0 ]: 1
+res[ 1 ]: 2
+res[ 2 ]: 15
+res[ 3 ]: test
+~~~
