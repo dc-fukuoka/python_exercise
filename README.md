@@ -37,7 +37,7 @@ matrix size: 8192x8192
 MKL dgemm(): 3.82s  
 numpy dot  : 3.87s
 
- * read_struct.py: read packed data(struct in C) by python.
+ * read_struct.py: read binary packed data(struct in C) by python.
 ~~~
 $ gcc -g write.c
 $ ./a.out
